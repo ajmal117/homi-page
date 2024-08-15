@@ -1,12 +1,17 @@
 import "./App.css";
 import Navbar from "./component/Navbar";
-import Home from "./component/Home";
+import Banner from "./component/Banner";
+import InfoSection from "./component/InfoSection";
+import ServicesSlider from "./component/ServiceSlider";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Home />
+        <Banner />
+        <InfoSection/>
+        <ServicesSlider/>
+       
     </>
   );
 }
