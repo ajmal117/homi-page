@@ -4,7 +4,7 @@ import { FaUserTie, FaClipboardCheck, FaHeadset } from "react-icons/fa";
 
 const InfoSection = () => {
   return (
-    <div className="py-6 px-4 md:px-24 relative">
+    <div className="py-6 px-4 md:px-24 ">
       <div className="flex flex-col md:flex-row gap-6 py-3 justify-around items-center bg-white rounded-full shadow-lg">
         <div className="flex flex-col items-center text-center">
           <div className="bg-orange-500 rounded-full p-4 mb-2">

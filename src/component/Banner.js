@@ -3,7 +3,7 @@ import Homepic from "../images/pic1.png";
 
 const Banner = () => {
   return (
-    <div className="flex flex-col-reverse lg:flex-row items-center justify-around p-10 bg-gray-100 px-24">
+    <div className="flex flex-col-reverse lg:flex-row items-center justify-around px-4 pt-24 pb-10 bg-[#fdf8f7] md:px-24">
       {/* Text Section */}
       <div className="text-center lg:text-left lg:max-w-lg">
         <p className="text-orange-500 text-lg lg:text-xl font-semibold">

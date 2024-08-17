@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const services = [
   {
@@ -27,41 +30,45 @@ const services = [
   },
 ];
 
-export default function ServicesSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function ServiceSlider() {
+  const sliderRef = useRef(null);
+
+  const settings = {
+    // dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    // arrows: false, // Disable default arrows
+  };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? services.length - 1 : prevIndex - 1
-    );
+    sliderRef.current.slickPrev();
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === services.length - 1 ? 0 : prevIndex + 1
-    );
+    sliderRef.current.slickNext();
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center py-10">
-      <div className="md:w-2/3 flex-col md:flex items-center">
+    <div className="flex flex-col md:flex-row items-center justify-center py-10 md:px-24 px-4 ">
+      <div className="md:flex-row flex flex-col w-full">
         {/* Left Fixed Services Info */}
-        <div className="w-full md:w-1/3 mb-6 md:mb-0 text-center md:text-left">
+        <div className="w-full md:w-1/3 mb-6 md:mb-0 text-center md:text-left z-10 bg-white">
           <h2 className="text-orange-500 text-lg font-semibold">Services</h2>
           <h1 className="text-3xl md:text-4xl font-bold text-blue-900 my-4">
             I Provide Wide Range Of Digital Services
           </h1>
 
-          {/* Navigation Arrows for Mobile */}
-          <div className="flex justify-center  mt-4">
+          <div className="flex mt-4 justify-center md:justify-start">
             <button
-              className="p-2 mx-2 rounded-full bg-gray-300 text-blue-900"
+              className="p-2 rounded-full bg-gray-300 text-blue-900"
               onClick={prevSlide}
             >
               ←
             </button>
             <button
-              className="p-2 mx-2 rounded-full bg-orange-500 text-white"
+              className="p-2 mx-7 rounded-full bg-orange-500 text-white"
               onClick={nextSlide}
             >
               →
@@ -70,24 +77,19 @@ export default function ServicesSlider() {
         </div>
 
         {/* Slider Container */}
-        <div className="w-full md:w-2/3 relative">
-          <div
-            className="flex transition-transform transform"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
+        <div className="w-full md:w-2/3">
+          <Slider ref={sliderRef} {...settings}>
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`min-w-full p-6 text-center shadow-lg ${service.bgColor} text-white rounded-lg mx-2`}
+                className={`p-6 text-center shadow-lg ${service.bgColor} text-white rounded-lg mx-4`} // Updated: Added mx-4 for spacing
               >
                 <div className="text-6xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold">{service.title}</h3>
                 <p className="mt-2">{service.description}</p>
               </div>
             ))}
-          </div>
-
-          {/* Navigation Arrows for Desktop */}
+          </Slider>
         </div>
       </div>
     </div>

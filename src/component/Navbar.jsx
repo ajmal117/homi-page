@@ -42,11 +42,11 @@ function Navbar() {
 
   return (
     <>
-      <header className="w-full bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-300">
+      <header className="w-full bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-100 z-[999]">
         <nav
           className={`py-4 lg:px-24 px-4 ${
             isSticky
-              ? "sticky transition-all ease-in duration-2000 top-0 left-0 right-0 bg-blue-300"
+              ? "sticky transition-all ease-in duration-2000 top-0 left-0 right-0 bg-orange-400"
               : "transition-all ease-linear duration-2000"
           }`}
         >
@@ -54,10 +54,10 @@ function Navbar() {
             {/* insert logo */}
             <href
               to="/"
-              className="text-2 font-bold text-blue-700 item-center gap-2"
+              className="text-2 font-bold text-blue-700 item-center gap-2 flex justify-center items-center"
             >
               <FaBlog className="inline-block" />
-              Ajmico reads
+              Ajmico
             </href>
             {/* nav item for large device */}
             <ul className="md:flex space-x-12 hidden">
