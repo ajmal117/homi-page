@@ -12,21 +12,21 @@ const ContactForm = () => {
             between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday.
           </p>
           <div className="mt-4 flex space-x-4">
-            <a href="#" className="text-gray-800 hover:text-gray-600">
+            <href href="#" className="text-gray-800 hover:text-gray-600">
               <i className="fab fa-linkedin"></i>
-            </a>
-            <a href="#" className="text-gray-800 hover:text-gray-600">
+            </href>
+            <href href="#" className="text-gray-800 hover:text-gray-600">
               <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="text-gray-800 hover:text-gray-600">
+            </href>
+            <href href="#" className="text-gray-800 hover:text-gray-600">
               <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="text-gray-800 hover:text-gray-600">
+            </href>
+            <href href="#" className="text-gray-800 hover:text-gray-600">
               <i className="fab fa-dribbble"></i>
-            </a>
-            <a href="#" className="text-gray-800 hover:text-gray-600">
+            </href>
+            <href href="#" className="text-gray-800 hover:text-gray-600">
               <i className="fab fa-facebook"></i>
-            </a>
+            </href>
           </div>
         </div>
 
